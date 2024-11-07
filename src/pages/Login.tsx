@@ -24,7 +24,7 @@ export const Login = () => {
           localStorage.setItem("token", data.token);
           
           // Redirige a la página de tareas
-          navigate("/MainPage");
+          navigate("/yourTasks");
         } catch (err: any) {
           // Maneja el error de autenticación
           setError(err || "Failed to log in");

@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider, Outlet, Navigate } from 'react-router-dom';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
-import { MainPage } from './pages/MainPages'; // Asegúrate de importar MainPage
+import { MyTaskCreated } from './pages/MyTaskCreated';
+import { YourTasks } from './pages/YourTasks';
 
 function App() {
     const router = createBrowserRouter([
@@ -18,13 +19,17 @@ function App() {
             element: <Register />,  // Página de registro
         },
         {
-            path: "/MainPage",
-            element: <MainPage />,  // Página principal de tareas
+            path: "/yourTasks",
+            element: <YourTasks />,  // Página principal de tareas
         },
         {
             path: "*",
             element: <Navigate to="/login" replace />,  // Redirige a login si la ruta no existe
         },
+        {
+            path: "/MyTaskCreated",
+            element: <MyTaskCreated />,  
+        }
     ]);
 
     return <RouterProvider router={router} />;

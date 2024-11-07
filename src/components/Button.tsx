@@ -1,10 +1,11 @@
 import IButton from "../interface/IButton"
 
-const Button:React.FC<IButton> = ({text,className}) => {
+const Button:React.FC<IButton> = ({text,customClass,onClick}) => {
   return (
     <button
+    onClick={onClick}
         type="submit"
-        className={`flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition duration-150 ease-in ${className}`}
+        className={`flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition duration-150 ease-in ${customClass}`}
     >
         <span className="mr-2 uppercase">{text}</span>
         <span>
